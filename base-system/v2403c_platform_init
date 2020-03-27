@@ -63,19 +63,6 @@ unbind_hwm_driver() {
 	done
 }
 
-# HIGH means miniPCIe for cellular, LOW means for wifi do nothing
-power_on_cellular_module() {
-	# check DIP slots is LTE mode and power on it
-	if [[ $(cat /sys/class/gpio/gpio455/value) == 1 ]]; then
-		mx-module-ctl -s 1 -p on
-	fi
-
-	# check dip slots and power on celluar
-	if [[ $(cat /sys/class/gpio/gpio487/value) == 1 ]]; then
-		mx-module-ctl -s 2 -p on
-	fi
-}
-
 initial_it87_uart() {
 	# Port 1
 	init_gpio "444" "out" "0"
@@ -104,16 +91,6 @@ initial_it87_uart() {
 	/sbin/mx-uart-ctl -p 3 -m 0
 }
 
-initial_cellular() {
-	# initial cellular PWR pins
-	init_gpio "497" "out" "0"
-	init_gpio "499" "out" "0"
-
-	# set first sim card slot by default
-	init_gpio "496" "out" "0"
-	init_gpio "498" "out" "0"
-}
-
 initial_dio() {
 	# export DIO input pins (DI0~DI3)
 	init_gpio "488"
@@ -128,21 +105,11 @@ initial_dio() {
 	init_gpio "495" "out" "0"
 }
 
-initial_dip_switch() {
-	# export dip switch gpio pins
-	init_gpio "455"
-	init_gpio "487"
-}
-
 case "$1" in
 	start)
 		bind_hwm_driver
 		initial_it87_uart
 		initial_dio
-		initial_cellular
-		initial_dip_switch
-		power_on_cellular_module
-		systemctl restart moxa-module-control.service
 	;;
 	stop)
 		unbind_hwm_driver
