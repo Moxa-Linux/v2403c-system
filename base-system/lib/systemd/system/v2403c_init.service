@@ -1,6 +1,6 @@
 [Unit]
 Description=Moxa V2403C series initial setting
-After=getty.target
+Before=rc-local.service
 
 [Service]
 Type=oneshot
