@@ -1,0 +1,12 @@
+[Unit]
+Description=Moxa V2403C series initial setting
+Before=rc-local.service
+
+[Service]
+Type=oneshot
+ExecStart=/sbin/v2403c_platform_init start
+ExecStop=/sbin/v2403c_platform_init stop
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target
