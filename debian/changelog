@@ -1,3 +1,39 @@
+v2403c-system (1.1.0+deb9) stretch; urgency=low
+
+  [Added]
+    * Support Moxa power ignition utility and add config to moxa-config
+    * Support Moxa version utility and add config 1.0 to moxa-config
+    * Add 'moxa-it87-power-igtd' minimum required version to 1.0.0+deb9
+    * Add 'moxa-snmpd-support-package' minimum required version to 1.0.1
+    * Add 'linux-headers-4.9.0-13-amd64' minimum required version to 4.9.228-1
+    * Add 'linux-image-4.9.0-13-amd64' minimum required version to 4.9.228-1
+    * Add 'libmoxa-dio-control1' minimum required version to 1.2.0+deb9
+    * Add 'libmoxa-dio-control-dev' minimum required version to 1.2.0+deb9
+    * Add 'libmoxa-gpio-control1' minimum required version to 1.0.3+deb9
+    * Add 'libmoxa-gpio-control-dev' minimum required version to 1.0.3+deb9
+    * Add 'libmoxa-uart-control1' minimum required version to 1.1.6+deb9
+    * Add 'libmoxa-uart-control-dev' minimum required version to 1.1.6+deb9
+
+  [Changed]
+    * Bump 'moxa-cellular-utils' minimum required version to 2.10.16
+    * Bump 'moxa-hwmon-ina2xx-driver-amd64' minimum required version to 4.9.168+1.2.0+deb9
+    * Bump 'moxa-atheros-ath10k-driver-amd64' minimum required version to 4.9.198+1.2.0
+    * Bump 'moxa-it87-gpio-driver-amd64' minimum required version to 5.2+1.2.0
+    * Bump 'moxa-it87-serial-driver-amd64' minimum required version to 1.2.0
+    * Bump 'moxa-it87-wdt-driver-4.9.0-amd64' minimum required version to 4.9.228+1.0.0+deb9
+    * Bump 'tpm2-tools' minimum required version to 4.1.1-1-moxa1
+    * Bump 'moxa-module-control' minimum required version to 1.6.0
+    * Bump 'libtss2-esys0' minimum required version to 2.4.0-1-moxa1
+    * Bump 'snmpd' minimum required version to 5.7.3+dfsg-1.7+deb9u1
+    * Bump 'wpasupplicant' minimum required version to 2:2.4-1+deb9u6
+    * Changed initial sysclass gpio index method by GPIO PIN number from IT8786 chip
+    * Changed Moxa module control config to meet version 1.6.0
+
+  [Removed]
+    * SNMP daemon config which is replaced by moxa-snmpd-support-package
+
+ -- Elvis Yao (姚家瑋) <ElvisCW.Yao@moxa.com>  Fri, 29 Jan 2021 10:44:07 +0800
+
 v2403c-system (1.0.1) stretch; urgency=low
 
   * refactor: base-system folder as root file system style
