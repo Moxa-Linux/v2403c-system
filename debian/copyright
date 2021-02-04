@@ -1,6 +1,6 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: v2403c-system
-Source: http://gitlab.syssw.moxa.com/MXcore-Package/v2403c-system
+Source: https://gitlab.com/moxa/ibg/software/platform/linux/sys-gitlab/mxcore-package/v2403c-system
 
 Files: *
 Copyright: 2020 Moxa Corp.
