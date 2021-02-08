@@ -1,3 +1,15 @@
+v2403c-system (1.2.0+deb9) stretch; urgency=low
+
+  [Added]
+    * Add 'mxp-common-udev-rules' minimum required version to 1.0.3
+    * Add udev rule to start cellular mgmt service by uevent
+
+  [Changed]
+    * Change the method of starting service in moxa-module-control config:
+      switch sim and power on are controlled by 'mx-module-ctl'
+
+ -- Elvis Yao (姚家瑋) <ElvisCW.Yao@moxa.com>  Fri, 05 Feb 2021 14:38:17 +0800
+
 v2403c-system (1.1.0+deb9) stretch; urgency=low
 
   [Added]
